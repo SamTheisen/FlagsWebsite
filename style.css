@@ -159,6 +159,109 @@ a {
 }
 
 /* ============================================================
+   FOG ANIMATION
+   ============================================================ */
+.fog-wrap {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.fog {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.fog-1 {
+  width: 90vw;
+  height: 280px;
+  background: radial-gradient(ellipse at center, rgba(210, 225, 245, 0.32) 0%, transparent 70%);
+  filter: blur(40px);
+  bottom: 18%;
+  left: -15%;
+  animation: fog-right 32s linear infinite;
+}
+
+.fog-2 {
+  width: 110vw;
+  height: 240px;
+  background: radial-gradient(ellipse at center, rgba(200, 218, 242, 0.26) 0%, transparent 70%);
+  filter: blur(50px);
+  bottom: 2%;
+  left: -25%;
+  animation: fog-right 46s linear infinite;
+  animation-delay: -18s;
+}
+
+.fog-3 {
+  width: 75vw;
+  height: 260px;
+  background: radial-gradient(ellipse at center, rgba(215, 228, 248, 0.28) 0%, transparent 70%);
+  filter: blur(45px);
+  top: 5%;
+  right: -10%;
+  animation: fog-left 38s linear infinite;
+  animation-delay: -10s;
+}
+
+.fog-4 {
+  width: 65vw;
+  height: 220px;
+  background: radial-gradient(ellipse at center, rgba(205, 220, 245, 0.22) 0%, transparent 70%);
+  filter: blur(50px);
+  top: 32%;
+  left: 15%;
+  animation: fog-right 52s linear infinite;
+  animation-delay: -30s;
+}
+
+@keyframes fog-right {
+  from { transform: translateX(0) translateY(0); }
+  50%  { transform: translateX(60vw) translateY(-12px); }
+  to   { transform: translateX(130vw) translateY(0); }
+}
+
+@keyframes fog-left {
+  from { transform: translateX(0) translateY(0); }
+  50%  { transform: translateX(-60vw) translateY(10px); }
+  to   { transform: translateX(-130vw) translateY(0); }
+}
+
+/* ============================================================
+   SECTION BACKGROUND (skyline photo behind flags)
+   ============================================================ */
+.section-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  /* fallback gradient if no photo */
+  background: linear-gradient(160deg, #0d1a3a 0%, #0a1a20 100%);
+}
+
+.section-bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 60%;
+  opacity: 0.65;
+}
+
+.section-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(9, 13, 24, 0.3) 0%,
+    rgba(9, 13, 24, 0.15) 40%,
+    rgba(9, 13, 24, 0.5) 100%
+  );
+}
+
+/* ============================================================
    SECTION HEADERS
    ============================================================ */
 .section-header {
@@ -182,7 +285,13 @@ a {
    FLAGS SECTION
    ============================================================ */
 .flags-section {
+  position: relative;
   padding: 90px 0 80px;
+}
+
+.flags-section .container {
+  position: relative;
+  z-index: 1;
 }
 
 .flags-grid {
@@ -466,6 +575,108 @@ a {
 
 .quiz-option:active:not(:disabled) {
   transform: scale(0.97);
+}
+
+/* Quiz text input + autocomplete */
+.quiz-input-wrap {
+  position: relative;
+  margin-bottom: 12px;
+  text-align: left;
+}
+
+.quiz-input {
+  width: 100%;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+  font-family: var(--font);
+  font-size: 1rem;
+  color: var(--text);
+  outline: none;
+  transition: border-color var(--transition);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.quiz-input:focus {
+  border-color: var(--gold);
+}
+
+.quiz-input:disabled {
+  opacity: 0.5;
+}
+
+.quiz-suggestions {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  background: var(--surface-2);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: var(--radius-sm);
+  list-style: none;
+  z-index: 10;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+}
+
+.quiz-suggestions:empty {
+  display: none;
+}
+
+.quiz-suggestions li {
+  padding: 12px 16px;
+  font-size: 0.95rem;
+  color: var(--text);
+  cursor: pointer;
+  transition: background var(--transition);
+  border-bottom: 1px solid var(--border);
+}
+
+.quiz-suggestions li:last-child {
+  border-bottom: none;
+}
+
+.quiz-suggestions li:hover,
+.quiz-suggestions li.active {
+  background: var(--surface-hover);
+}
+
+.quiz-suggestions li strong {
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.quiz-submit {
+  width: 100%;
+  margin-bottom: 16px;
+  opacity: 1;
+  transition: opacity var(--transition), transform var(--transition), box-shadow var(--transition);
+}
+
+.quiz-submit:disabled {
+  opacity: 0.35;
+  transform: none;
+  box-shadow: none;
+  cursor: default;
+}
+
+.quiz-feedback {
+  min-height: 28px;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.feedback-correct {
+  color: var(--green);
+}
+
+.feedback-wrong {
+  color: var(--red);
+}
+
+.feedback-wrong strong {
+  color: var(--text);
 }
 
 .quiz-option.correct {

@@ -58,6 +58,42 @@ const TEAMS = [
 ];
 
 // ============================================================
+// ALL COUNTRIES — used for quiz autocomplete so the dropdown
+// doesn't hint at which of the 32 teams the flag belongs to
+// ============================================================
+
+const ALL_COUNTRIES = [
+  "Afghanistan","Albania","Algeria","Andorra","Angola","Antigua and Barbuda",
+  "Argentina","Armenia","Australia","Austria","Azerbaijan","Bahamas","Bahrain",
+  "Bangladesh","Barbados","Belarus","Belgium","Belize","Benin","Bhutan","Bolivia",
+  "Bosnia and Herzegovina","Botswana","Brazil","Brunei","Bulgaria","Burkina Faso",
+  "Burundi","Cabo Verde","Cambodia","Cameroon","Canada","Central African Republic",
+  "Chad","Chile","China","Colombia","Comoros","Congo","Costa Rica","Croatia","Cuba",
+  "Cyprus","Czech Republic","Denmark","Djibouti","Dominica","Dominican Republic",
+  "Ecuador","Egypt","El Salvador","Equatorial Guinea","Eritrea","Estonia","Eswatini",
+  "Ethiopia","Fiji","Finland","France","Gabon","Gambia","Georgia","Germany","Ghana",
+  "Greece","Grenada","Guatemala","Guinea","Guinea-Bissau","Guyana","Haiti","Honduras",
+  "Hungary","Iceland","India","Indonesia","Iran","Iraq","Ireland","Israel","Italy",
+  "Ivory Coast","Jamaica","Japan","Jordan","Kazakhstan","Kenya","Kiribati","Kosovo",
+  "Kuwait","Kyrgyzstan","Laos","Latvia","Lebanon","Lesotho","Liberia","Libya",
+  "Liechtenstein","Lithuania","Luxembourg","Madagascar","Malawi","Malaysia","Maldives",
+  "Mali","Malta","Marshall Islands","Mauritania","Mauritius","Mexico","Micronesia",
+  "Moldova","Monaco","Mongolia","Montenegro","Morocco","Mozambique","Myanmar","Namibia",
+  "Nauru","Nepal","Netherlands","New Zealand","Nicaragua","Niger","Nigeria","North Korea",
+  "North Macedonia","Norway","Oman","Pakistan","Palau","Palestine","Panama",
+  "Papua New Guinea","Paraguay","Peru","Philippines","Poland","Portugal","Qatar",
+  "Romania","Russia","Rwanda","Saint Kitts and Nevis","Saint Lucia",
+  "Saint Vincent and the Grenadines","Samoa","San Marino","Sao Tome and Principe",
+  "Saudi Arabia","Scotland","Senegal","Serbia","Seychelles","Sierra Leone","Singapore",
+  "Slovakia","Slovenia","Solomon Islands","Somalia","South Africa","South Korea",
+  "South Sudan","Spain","Sri Lanka","Sudan","Suriname","Sweden","Switzerland","Syria",
+  "Taiwan","Tajikistan","Tanzania","Thailand","Timor-Leste","Togo","Tonga",
+  "Trinidad and Tobago","Tunisia","Turkey","Turkmenistan","Tuvalu","Uganda","Ukraine",
+  "United Arab Emirates","United Kingdom","United States","Uruguay","Uzbekistan",
+  "Vanuatu","Vatican City","Venezuela","Vietnam","Wales","Yemen","Zambia","Zimbabwe"
+];
+
+// ============================================================
 // FLAG IMAGE URL HELPER
 // ============================================================
 
@@ -151,7 +187,6 @@ function startQuiz() {
 
 function renderQuestion() {
   const team     = quizQueue[quizCursor];
-  const options  = buildOptions(team);
   const progress = (quizCursor / TEAMS.length) * 100;
   const container = document.getElementById("quizContainer");
 
@@ -163,26 +198,104 @@ function renderQuestion() {
     <div class="quiz-flag-wrap">
       <img src="${flagUrl(team.code)}" alt="Mystery flag">
     </div>
-    <div class="quiz-options">
-      ${options.map(o => `<button class="quiz-option" data-name="${o.name}">${o.name}</button>`).join("")}
+    <div class="quiz-input-wrap">
+      <input
+        id="quizInput"
+        class="quiz-input"
+        type="text"
+        autocomplete="off"
+        autocorrect="off"
+        autocapitalize="off"
+        spellcheck="false"
+        placeholder="Type a country name..."
+      >
+      <ul class="quiz-suggestions" id="quizSuggestions"></ul>
     </div>
+    <button class="btn-primary quiz-submit" id="quizSubmit" disabled>Submit</button>
+    <div class="quiz-feedback" id="quizFeedback"></div>
   `;
 
-  container.querySelectorAll(".quiz-option").forEach(btn => {
-    btn.addEventListener("click", () => handleAnswer(btn, team.name));
+  const input       = document.getElementById("quizInput");
+  const suggestions = document.getElementById("quizSuggestions");
+  const submitBtn   = document.getElementById("quizSubmit");
+
+  input.focus();
+
+  input.addEventListener("input", () => {
+    const val = input.value.trim();
+    submitBtn.disabled = val.length === 0;
+    renderSuggestions(val, suggestions, input, submitBtn);
+  });
+
+  // Keyboard: arrow keys to navigate suggestions, Enter to submit
+  input.addEventListener("keydown", (e) => {
+    const items = suggestions.querySelectorAll("li");
+    const active = suggestions.querySelector("li.active");
+    if (e.key === "ArrowDown") {
+      e.preventDefault();
+      const next = active ? active.nextElementSibling : items[0];
+      if (next) { active?.classList.remove("active"); next.classList.add("active"); input.value = next.textContent; submitBtn.disabled = false; }
+    } else if (e.key === "ArrowUp") {
+      e.preventDefault();
+      const prev = active?.previousElementSibling;
+      if (prev) { active.classList.remove("active"); prev.classList.add("active"); input.value = prev.textContent; }
+    } else if (e.key === "Enter" && !submitBtn.disabled) {
+      suggestions.innerHTML = "";
+      handleAnswer(input.value.trim(), team.name);
+    } else if (e.key === "Escape") {
+      suggestions.innerHTML = "";
+    }
+  });
+
+  submitBtn.addEventListener("click", () => {
+    suggestions.innerHTML = "";
+    handleAnswer(input.value.trim(), team.name);
+  });
+
+  // Close suggestions when clicking outside
+  document.addEventListener("click", (e) => {
+    if (!e.target.closest(".quiz-input-wrap")) suggestions.innerHTML = "";
+  }, { once: false, capture: false });
+}
+
+function renderSuggestions(val, listEl, input, submitBtn) {
+  listEl.innerHTML = "";
+  if (!val) return;
+  const matches = ALL_COUNTRIES
+    .filter(name => name.toLowerCase().includes(val.toLowerCase()))
+    .slice(0, 6);
+  matches.forEach(name => {
+    const li = document.createElement("li");
+    // Bold the matching portion
+    const idx = name.toLowerCase().indexOf(val.toLowerCase());
+    li.innerHTML = name.slice(0, idx) +
+      `<strong>${name.slice(idx, idx + val.length)}</strong>` +
+      name.slice(idx + val.length);
+    li.addEventListener("mousedown", (e) => {
+      e.preventDefault(); // prevent input blur
+      input.value = name;
+      submitBtn.disabled = false;
+      listEl.innerHTML = "";
+      input.focus();
+    });
+    listEl.appendChild(li);
   });
 }
 
-function handleAnswer(btn, correct) {
-  const all = document.querySelectorAll(".quiz-option");
-  all.forEach(b => b.disabled = true);
+function handleAnswer(guess, correct) {
+  const input     = document.getElementById("quizInput");
+  const submitBtn = document.getElementById("quizSubmit");
+  const feedback  = document.getElementById("quizFeedback");
 
-  if (btn.dataset.name === correct) {
-    btn.classList.add("correct");
+  if (input) input.disabled = true;
+  if (submitBtn) submitBtn.disabled = true;
+
+  const isCorrect = guess.toLowerCase() === correct.toLowerCase();
+  if (isCorrect) {
     quizScore++;
+    feedback.innerHTML = `<span class="feedback-correct">Correct!</span>`;
   } else {
-    btn.classList.add("wrong");
-    all.forEach(b => { if (b.dataset.name === correct) b.classList.add("correct"); });
+    feedback.innerHTML = `<span class="feedback-wrong">It was <strong>${correct}</strong></span>`;
   }
 
   setTimeout(() => {
@@ -192,7 +305,7 @@ function handleAnswer(btn, correct) {
     } else {
       renderResult();
     }
-  }, 900);
+  }, 1100);
 }
 
 function renderResult() {
@@ -227,7 +340,3 @@ function shuffle(arr) {
   return arr;
 }
 
-function buildOptions(correct) {
-  const wrong = shuffle(TEAMS.filter(t => t.name !== correct.name)).slice(0, 3);
-  return shuffle([correct, ...wrong]);
-}
