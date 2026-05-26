@@ -23,38 +23,39 @@ const CONFIG = {
 // ============================================================
 
 const TEAMS = [
-  { name: "Italy",           code: "it",     justification: "[Replace with justification]" },
-  { name: "Norway",          code: "no",     justification: "[Replace with justification]" },
-  { name: "Sweden",          code: "se",     justification: "[Replace with justification]" },
-  { name: "Finland",         code: "fi",     justification: "[Replace with justification]" },
-  { name: "Ireland",         code: "ie",     justification: "[Replace with justification]" },
-  { name: "Scotland",        code: "gb-sct", justification: "[Replace with justification]" },
-  { name: "Romania",         code: "ro",     justification: "[Replace with justification]" },
-  { name: "Hungary",         code: "hu",     justification: "[Replace with justification]" },
-  { name: "Czech Republic",  code: "cz",     justification: "[Replace with justification]" },
-  { name: "Slovakia",        code: "sk",     justification: "[Replace with justification]" },
-  { name: "Bulgaria",        code: "bg",     justification: "[Replace with justification]" },
-  { name: "Greece",          code: "gr",     justification: "[Replace with justification]" },
-  { name: "Turkey",          code: "tr",     justification: "[Replace with justification]" },
-  { name: "Russia",          code: "ru",     justification: "[Replace with justification]" },
-  { name: "Ukraine",         code: "ua",     justification: "[Replace with justification]" },
-  { name: "Egypt",           code: "eg",     justification: "[Replace with justification]" },
-  { name: "Nigeria",         code: "ng",     justification: "[Replace with justification]" },
-  { name: "Ivory Coast",     code: "ci",     justification: "[Replace with justification]" },
-  { name: "Ghana",           code: "gh",     justification: "[Replace with justification]" },
-  { name: "Algeria",         code: "dz",     justification: "[Replace with justification]" },
-  { name: "Tunisia",         code: "tn",     justification: "[Replace with justification]" },
-  { name: "Cameroon",        code: "cm",     justification: "[Replace with justification]" },
-  { name: "South Africa",    code: "za",     justification: "[Replace with justification]" },
-  { name: "Kenya",           code: "ke",     justification: "[Replace with justification]" },
-  { name: "Chile",           code: "cl",     justification: "[Replace with justification]" },
-  { name: "Bolivia",         code: "bo",     justification: "[Replace with justification]" },
-  { name: "Peru",            code: "pe",     justification: "[Replace with justification]" },
-  { name: "Colombia",        code: "co",     justification: "[Replace with justification]" },
-  { name: "China",           code: "cn",     justification: "[Replace with justification]" },
-  { name: "India",           code: "in",     justification: "[Replace with justification]" },
-  { name: "Indonesia",       code: "id",     justification: "[Replace with justification]" },
-  { name: "New Zealand",     code: "nz",     justification: "[Replace with justification]" },
+  { name: "Italy",                 code: "it",     rank: 12,  justification: "Nothing need be said" },
+  { name: "Denmark",               code: "dk",     rank: 20,  justification: "Qualification Finalist" },
+  { name: "Nigeria",               code: "ng",     rank: 26,  justification: "Qualification Finalist" },
+  { name: "Ukraine",               code: "ua",     rank: 32,  justification: "Qualification Finalist" },
+  { name: "Poland",                code: "pl",     rank: 35,  justification: "Qualification Finalist" },
+  { name: "Wales",                 code: "gb-wls", rank: 37,  justification: "Qualification Finalist" },
+  { name: "Serbia",                code: "rs",     rank: 39,  justification: "Just a good damn team!" },
+  { name: "Cameroon",              code: "cm",     rank: 45,  justification: "Qualification Finalist" },
+  { name: "Greece",                code: "gr",     rank: 47,  justification: "Qual. Finalist and wife's ancestral home" },
+  { name: "Slovakia",              code: "sk",     rank: 48,  justification: "Qualification Finalist" },
+  { name: "Venezuela",             code: "ve",     rank: 49,  justification: "Qualification Finalist" },
+  { name: "Romania",               code: "ro",     rank: 56,  justification: "Qualification Finalist" },
+  { name: "Slovenia",              code: "si",     rank: 58,  justification: "Qualification Finalist" },
+  { name: "Ireland",               code: "ie",     rank: 59,  justification: "Qualification Finalist" },
+  { name: "Burkina Faso",          code: "bf",     rank: 62,  justification: "Very cool country name!" },
+  { name: "Albania",               code: "al",     rank: 64,  justification: "Qualification Finalist" },
+  { name: "North Macedonia",       code: "mk",     rank: 67,  justification: "Qualification Finalist" },
+  { name: "United Arab Emirates",  code: "ae",     rank: 68,  justification: "Qualification Finalist" },
+  { name: "Northern Ireland",      code: "gb-nir", rank: 70,  justification: "Qualification Finalist" },
+  { name: "Jamaica",               code: "jm",     rank: 71,  justification: "Qualification Finalist" },
+  { name: "Georgia",               code: "ge",     rank: 72,  justification: "Qualification Finalist" },
+  { name: "Finland",               code: "fi",     rank: 73,  justification: "Qualification Finalist" },
+  { name: "Iceland",               code: "is",     rank: 75,  justification: "Qualification Finalist" },
+  { name: "Bolivia",               code: "bo",     rank: 76,  justification: "Qualification Finalist" },
+  { name: "Montenegro",            code: "me",     rank: 81,  justification: "Qualification Finalist" },
+  { name: "Gabon",                 code: "ga",     rank: 87,  justification: "Qualification Finalist" },
+  { name: "Thailand",              code: "th",     rank: 93,  justification: "Love the food!" },
+  { name: "Guatemala",             code: "gt",     rank: 96,  justification: "I've got many Teco amigos" },
+  { name: "Luxembourg",            code: "lu",     rank: 98,  justification: "My ancestral home!" },
+  { name: "Mozambique",            code: "mz",     rank: 101, justification: "Named in a 1976 Bob Dylan song" },
+  { name: "Suriname",              code: "sr",     rank: 125, justification: "Most obscure good team" },
+  { name: "San Marino",            code: "sm",     rank: 211, justification: "Lowest FIFA rated team in world!" },
+  { name: "USA",                   code: "us",     rank: 16,  justification: "USA, USA, USA!" },
 ];
 
 // ============================================================
@@ -80,7 +81,7 @@ const ALL_COUNTRIES = [
   "Mali","Malta","Marshall Islands","Mauritania","Mauritius","Mexico","Micronesia",
   "Moldova","Monaco","Mongolia","Montenegro","Morocco","Mozambique","Myanmar","Namibia",
   "Nauru","Nepal","Netherlands","New Zealand","Nicaragua","Niger","Nigeria","North Korea",
-  "North Macedonia","Norway","Oman","Pakistan","Palau","Palestine","Panama",
+  "North Macedonia","Northern Ireland","Norway","Oman","Pakistan","Palau","Palestine","Panama",
   "Papua New Guinea","Paraguay","Peru","Philippines","Poland","Portugal","Qatar",
   "Romania","Russia","Rwanda","Saint Kitts and Nevis","Saint Lucia",
   "Saint Vincent and the Grenadines","Samoa","San Marino","Sao Tome and Principe",
@@ -89,7 +90,7 @@ const ALL_COUNTRIES = [
   "South Sudan","Spain","Sri Lanka","Sudan","Suriname","Sweden","Switzerland","Syria",
   "Taiwan","Tajikistan","Tanzania","Thailand","Timor-Leste","Togo","Tonga",
   "Trinidad and Tobago","Tunisia","Turkey","Turkmenistan","Tuvalu","Uganda","Ukraine",
-  "United Arab Emirates","United Kingdom","United States","Uruguay","Uzbekistan",
+  "United Arab Emirates","United Kingdom","United States","Uruguay","USA","Uzbekistan",
   "Vanuatu","Vatican City","Venezuela","Vietnam","Wales","Yemen","Zambia","Zimbabwe"
 ];
 
@@ -108,6 +109,7 @@ function flagUrl(code) {
 document.getElementById("heroSub").textContent = CONFIG.description;
 document.getElementById("footerText").textContent =
   `Flying above ${CONFIG.address} \u00b7 2026 FIFA World Cup`;
+document.getElementById("quizSub").textContent = `See if you can name all ${TEAMS.length}.`;
 
 // ============================================================
 // FLAGS GRID
@@ -117,56 +119,43 @@ function renderFlags() {
   const grid = document.getElementById("flagsGrid");
   grid.innerHTML = "";
 
-  TEAMS.forEach((team, i) => {
+  TEAMS.forEach((team) => {
     const card = document.createElement("div");
     card.className = "flag-card";
     card.setAttribute("role", "button");
     card.setAttribute("tabindex", "0");
-    card.setAttribute("aria-label", `${team.name} — tap for details`);
+    card.setAttribute("aria-label", `${team.name} — tap to reveal`);
     card.innerHTML = `
-      <div class="flag-img-wrap">
-        <img src="${flagUrl(team.code)}" alt="Flag of ${team.name}" loading="lazy">
+      <div class="flag-card-inner">
+        <div class="flag-card-front">
+          <div class="flag-img-wrap">
+            <img src="${flagUrl(team.code)}" alt="Mystery flag" loading="lazy">
+          </div>
+        </div>
+        <div class="flag-card-back">
+          <div class="flag-back-rank">FIFA #${team.rank}</div>
+          <div class="flag-back-name">${team.name}</div>
+          <div class="flag-back-divider"></div>
+          <div class="flag-back-reason">${team.justification}</div>
+        </div>
       </div>
-      <div class="flag-card-name">${team.name}</div>
     `;
-    card.addEventListener("click", () => openModal(i));
+    card.addEventListener("click", () => card.classList.toggle("flipped"));
     card.addEventListener("keydown", (e) => {
-      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openModal(i); }
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); card.classList.toggle("flipped"); }
     });
     grid.appendChild(card);
   });
 }
 
+document.addEventListener("click", (e) => {
+  if (!e.target.closest(".flag-card")) {
+    document.querySelectorAll(".flag-card.flipped").forEach(c => c.classList.remove("flipped"));
+  }
+});
+
 renderFlags();
 
-// ============================================================
-// MODAL
-// ============================================================
-
-const overlay   = document.getElementById("modalOverlay");
-const modalFlag = document.getElementById("modalFlag");
-const modalName = document.getElementById("modalName");
-const modalText = document.getElementById("modalJustification");
-
-function openModal(index) {
-  const team = TEAMS[index];
-  modalFlag.src       = flagUrl(team.code);
-  modalFlag.alt       = `Flag of ${team.name}`;
-  modalName.textContent = team.name;
-  modalText.textContent = team.justification;
-  overlay.classList.add("active");
-  document.body.style.overflow = "hidden";
-  document.getElementById("modalClose").focus();
-}
-
-function closeModal() {
-  overlay.classList.remove("active");
-  document.body.style.overflow = "";
-}
-
-document.getElementById("modalClose").addEventListener("click", closeModal);
-overlay.addEventListener("click", (e) => { if (e.target === overlay) closeModal(); });
-document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeModal(); });
 
 // ============================================================
 // QUIZ
