@@ -24,7 +24,7 @@ const CONFIG = {
 
 const TEAMS = [
   { joeRank: 49, name: "Italy",                 code: "it",     rank: 12,  justification: "Four-Time World Champion; Lost UEFA Playoff Final" },
-  { joeRank: 50, name: "United States",         code: "us",     rank: 16,  justification: "Host Nation — USA! USA! USA!" },
+  { joeRank: 50, name: "United States",         code: "us",     rank: 16,  justification: "I had one extra slot — gotta put in the USA!" },
   { joeRank: 51, name: "Denmark",               code: "dk",     rank: 20,  justification: "Euro 1992 Champion; Lost UEFA Playoff Final" },
   { joeRank: 52, name: "Nigeria",               code: "ng",     rank: 26,  justification: "Six-Time World Cup Participant; Finished 2nd in CAF Qualifying Group" },
   { joeRank: 53, name: "Ukraine",               code: "ua",     rank: 32,  justification: "2006 World Cup Quarterfinalist; Lost UEFA Playoff Final" },
