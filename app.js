@@ -5,7 +5,7 @@
 
 const CONFIG = {
   propertyName: "[Property Name]",
-  address:      "[Address], San Francisco, CA",
+  address:      "542 Laguna St., San Francisco, CA",
   // Hero sub-heading shown below the title
   description:  "[Short description — e.g. 'Every year, this building flies the flags of the teams that didn't make it to the World Cup. These are the 32 flying in 2026.']",
 };

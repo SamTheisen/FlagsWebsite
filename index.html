@@ -11,7 +11,7 @@
 </head>
 <body>
 
-  <!-- HERO — replace images/property.jpg with the actual photo -->
+  <!-- HERO + INTRO -->
   <section class="hero" id="top">
     <div class="hero-bg">
       <img src="images/property.jpg" alt="The Building" class="hero-photo">
@@ -24,17 +24,46 @@
       <div class="fog fog-3"></div>
       <div class="fog fog-4"></div>
     </div>
-    <div class="hero-content">
-      <p class="hero-eyebrow">San Francisco, CA</p>
-      <h1>The Unlucky 32 (+ 1)</h1>
-      <p class="hero-sub" id="heroSub">Loading...</p>
+
+    <!-- Title screen (first viewport) -->
+    <div class="hero-title-page">
+      <div class="hero-content">
+        <p class="hero-eyebrow">San Francisco, CA</p>
+        <h1>The Unlucky 32 (+ 1)</h1>
+        <p class="hero-sub" id="heroSub">Loading...</p>
+      </div>
+      <a href="#hero-intro" class="hero-scroll" aria-label="Read the story">
+        <span>Read the story</span>
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <path d="M9 3v12M3 9l6 6 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
     </div>
-    <a href="#flags" class="hero-scroll" aria-label="Scroll to flags">
-      <span>See the flags</span>
-      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
-        <path d="M9 3v12M3 9l6 6 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </a>
+
+    <!-- Intro text (scrolls within same section) -->
+    <div class="hero-intro" id="hero-intro">
+      <div class="about-content">
+        <h2>Welcome to the Hayes Valley Wall of Flags!</h2>
+        <p>I started work on this installation in 2012 as part of a façade upgrade for this lovely 1885 San Francisco Victorian building. My original plan was simple enough: build a nice wall and call it a day. But the more I looked at a big blank expanse, the more I realized I didn't want to create just another boring wall.</p>
+        <p>And since the World Cup was around the corner—and I'm a huge soccer fan—a different idea emerged: why not install a bunch of little ports and fly the flags of the World Cup nations as a celebration of sport, competition, and nationhood?</p>
+        <p>So that's exactly what I did. Since then, I've flown World Cup flags for every tournament, and loved the esthetic and community feedback. And then FIFA went and ruined my perfectly good plan.</p>
+        <p>For decades, the World Cup featured 32 teams. The format was brilliant: a month-long global festival that gradually narrowed the field until one nation stood alone as world champion. It was wildly successful—and wildly profitable.</p>
+        <p>Then, after Qatar 2022, FIFA looked at the world's appetite for more soccer (and their own appetite for increased revenue) and decided that 32 teams were not enough. Beginning with the 2026 World Cup, the field expanded to 48 teams.</p>
+        <p>Which created a problem for me.</p>
+        <p>My wall has room for only 32 flags. (Actually 33, but one extra slot exists for obscure architectural reasons that would take longer to explain than the offside rule.)</p>
+        <p>So after considering various options, I decided on a different approach. Instead of flying the flags of the 48 teams that qualified for the 2026 World Cup, I would fly the flags of the 32 next best teams that didn't qualify.</p>
+        <p>In other words, what you see here is my entirely unofficial, highly debatable, occasionally irrational ranking of the strongest national teams that will be watching the 2026 World Cup from home.</p>
+        <p>I based these selections on World Cup qualifying results from 2024–2026, FIFA rankings, performances in other international competitions, historical reputation, and—if we're being honest—a healthy amount of personal bias.</p>
+        <p>So enjoy the display. Feel free to agree, disagree, argue, heckle, campaign for your favorite nation, point out a glaring omission, or simply be silly. Soccer fans have been doing exactly that for generations.</p>
+        <p class="about-sign-off">With warm regards,<br><strong>Joe Theisen</strong><br>Hayes Valley, San Francisco</p>
+        <a href="#quiz" class="hero-intro-cta">
+          <span>Take the quiz</span>
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+            <path d="M9 3v12M3 9l6 6 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </div>
   </section>
 
   <!-- QUIZ -->
@@ -50,27 +79,6 @@
     </div>
   </section>
 
-  <!-- ABOUT -->
-  <section class="about-section" id="about">
-    <div class="container">
-      <div class="about-content">
-        <h2>Welcome to the Hayes Valley Wall of Flags!</h2>
-        <p>I started work on this installation in 2012 as part of a façade upgrade for this lovely 1885 San Francisco Victorian building. My original plan was simple enough: build a nice wall and call it a day. But the more I looked at a big blank expanse, the more I realized I didn't want to create just another boring wall.</p>
-        <p>And since the World Cup was around the corner—and I'm a huge soccer fan—a different idea emerged: why not install a bunch of little ports and fly the flags of the World Cup nations as a celebration of sport, competition, and nationhood?</p>
-        <p>So that's exactly what I did. Since then, I've flown World Cup flags for every tournament, and loved the esthetic and community feedback. And then FIFA went and ruined my perfectly good plan.</p>
-        <p>For decades, the World Cup featured 32 teams. The format was brilliant: a month-long global festival that gradually narrowed the field until one nation stood alone as world champion. It was wildly successful—and wildly profitable.</p>
-        <p>Then, after Qatar 2022, FIFA looked at the world's appetite for more soccer (and their own appetite for increased revenue) and decided that 32 teams were not enough. Beginning with the 2026 World Cup, the field expanded to 48 teams.</p>
-        <p>Which created a problem for me.</p>
-        <p>My wall has room for only 32 flags. (Actually 33, but one extra slot exists for obscure architectural reasons that would take longer to explain than the offside rule.)</p>
-        <p>So after considering various options, I decided on a different approach. Instead of flying the flags of the 48 teams that qualified for the 2026 World Cup, I would fly the flags of the 32 next best teams that didn't qualify.</p>
-        <p>In other words, what you see here is my entirely unofficial, highly debatable, occasionally irrational ranking of the strongest national teams that will be watching the 2026 World Cup from home.</p>
-        <p>I based these selections on World Cup qualifying results from 2024–2026, FIFA rankings, performances in other international competitions, historical reputation, and—if we're being honest—a healthy amount of personal bias.</p>
-        <p>So enjoy the display. Feel free to agree, disagree, argue, heckle, campaign for your favorite nation, point out a glaring omission, or simply be silly. Soccer fans have been doing exactly that for generations.</p>
-        <p class="about-sign-off">With warm regards,<br><strong>Joe Theisen</strong><br>Hayes Valley, San Francisco</p>
-      </div>
-    </div>
-  </section>
-
   <!-- FLAGS -->
   <section class="flags-section" id="flags">
     <!-- Skyline background — replace images/skyline.jpg with your own SF photo -->
@@ -80,8 +88,8 @@
     </div>
     <div class="container">
       <div class="section-header">
-        <h2>The Teams</h2>
-        <p>Tap a flag to find out why it's here.</p>
+        <h2>The Best of the Rest</h2>
+        <p class="section-subhead">Tap a flag to find out why it's here.</p>
       </div>
       <div class="flags-grid" id="flagsGrid"></div>
     </div>
