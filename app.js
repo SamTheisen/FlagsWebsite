@@ -133,7 +133,7 @@ function renderFlags() {
           </div>
         </div>
         <div class="flag-card-back">
-          <div class="flag-back-rank">Joe #${team.joeRank}</div>
+          <div class="flag-back-rank">Joe's Rank: ${team.joeRank}</div>
           <div class="flag-back-name">${team.name}</div>
           <div class="flag-back-divider"></div>
           <div class="flag-back-reason">${team.justification}</div>
