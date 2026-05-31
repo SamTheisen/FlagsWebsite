@@ -23,39 +23,39 @@ const CONFIG = {
 // ============================================================
 
 const TEAMS = [
-  { name: "Italy",                 code: "it",     rank: 12,  justification: "Nothing need be said" },
-  { name: "Denmark",               code: "dk",     rank: 20,  justification: "Qualification Finalist" },
-  { name: "Nigeria",               code: "ng",     rank: 26,  justification: "Qualification Finalist" },
-  { name: "Ukraine",               code: "ua",     rank: 32,  justification: "Qualification Finalist" },
-  { name: "Poland",                code: "pl",     rank: 35,  justification: "Qualification Finalist" },
-  { name: "Wales",                 code: "gb-wls", rank: 37,  justification: "Qualification Finalist" },
-  { name: "Serbia",                code: "rs",     rank: 39,  justification: "Just a good damn team!" },
-  { name: "Cameroon",              code: "cm",     rank: 45,  justification: "Qualification Finalist" },
-  { name: "Greece",                code: "gr",     rank: 47,  justification: "Qual. Finalist and wife's ancestral home" },
-  { name: "Slovakia",              code: "sk",     rank: 48,  justification: "Qualification Finalist" },
-  { name: "Venezuela",             code: "ve",     rank: 49,  justification: "Qualification Finalist" },
-  { name: "Romania",               code: "ro",     rank: 56,  justification: "Qualification Finalist" },
-  { name: "Slovenia",              code: "si",     rank: 58,  justification: "Qualification Finalist" },
-  { name: "Ireland",               code: "ie",     rank: 59,  justification: "Qualification Finalist" },
-  { name: "Burkina Faso",          code: "bf",     rank: 62,  justification: "Very cool country name!" },
-  { name: "Albania",               code: "al",     rank: 64,  justification: "Qualification Finalist" },
-  { name: "North Macedonia",       code: "mk",     rank: 67,  justification: "Qualification Finalist" },
-  { name: "United Arab Emirates",  code: "ae",     rank: 68,  justification: "Qualification Finalist" },
-  { name: "Northern Ireland",      code: "gb-nir", rank: 70,  justification: "Qualification Finalist" },
-  { name: "Jamaica",               code: "jm",     rank: 71,  justification: "Qualification Finalist" },
-  { name: "Georgia",               code: "ge",     rank: 72,  justification: "Qualification Finalist" },
-  { name: "Finland",               code: "fi",     rank: 73,  justification: "Qualification Finalist" },
-  { name: "Iceland",               code: "is",     rank: 75,  justification: "Qualification Finalist" },
-  { name: "Bolivia",               code: "bo",     rank: 76,  justification: "Qualification Finalist" },
-  { name: "Montenegro",            code: "me",     rank: 81,  justification: "Qualification Finalist" },
-  { name: "Gabon",                 code: "ga",     rank: 87,  justification: "Qualification Finalist" },
-  { name: "Thailand",              code: "th",     rank: 93,  justification: "Love the food!" },
-  { name: "Guatemala",             code: "gt",     rank: 96,  justification: "I've got many Teco amigos" },
-  { name: "Luxembourg",            code: "lu",     rank: 98,  justification: "My ancestral home!" },
-  { name: "Mozambique",            code: "mz",     rank: 101, justification: "Named in a 1976 Bob Dylan song" },
-  { name: "Suriname",              code: "sr",     rank: 125, justification: "Most obscure good team" },
-  { name: "San Marino",            code: "sm",     rank: 211, justification: "Lowest FIFA rated team in world!" },
-  { name: "USA",                   code: "us",     rank: 16,  justification: "USA, USA, USA!" },
+  { joeRank: 49, name: "Italy",                 code: "it",     rank: 12,  justification: "Four-Time World Champion; Lost UEFA Playoff Final" },
+  { joeRank: 50, name: "United States",         code: "us",     rank: 16,  justification: "Host Nation — USA! USA! USA!" },
+  { joeRank: 51, name: "Denmark",               code: "dk",     rank: 20,  justification: "Euro 1992 Champion; Lost UEFA Playoff Final" },
+  { joeRank: 52, name: "Nigeria",               code: "ng",     rank: 26,  justification: "Six-Time World Cup Participant; Finished 2nd in CAF Qualifying Group" },
+  { joeRank: 53, name: "Ukraine",               code: "ua",     rank: 32,  justification: "2006 World Cup Quarterfinalist; Lost UEFA Playoff Final" },
+  { joeRank: 54, name: "Poland",                code: "pl",     rank: 35,  justification: "Two-Time World Cup Third-Place Finisher; Lost UEFA Playoff Final" },
+  { joeRank: 55, name: "Wales",                 code: "gb-wls", rank: 37,  justification: "2022 World Cup Participant; Lost UEFA Playoff Semifinal" },
+  { joeRank: 56, name: "Serbia",                code: "rs",     rank: 39,  justification: "World Cup Regular; Last team eliminated before UEFA Playoffs" },
+  { joeRank: 57, name: "Cameroon",              code: "cm",     rank: 45,  justification: "Eight-Time World Cup Participant; CAF Qualification Near Miss" },
+  { joeRank: 58, name: "Greece",                code: "gr",     rank: 47,  justification: "Three-Time World Cup Participant; UEFA Playoff Contender. Plus my Wife's Ancestral Homeland!" },
+  { joeRank: 59, name: "Slovakia",              code: "sk",     rank: 48,  justification: "2010 World Cup Round-of-16 Participant; Lost UEFA Playoff Semifinal" },
+  { joeRank: 60, name: "Venezuela",             code: "ve",     rank: 49,  justification: "Never Qualified for a World Cup, but Missed Qualification by One Place" },
+  { joeRank: 61, name: "Romania",               code: "ro",     rank: 56,  justification: "Seven-Time World Cup Participant; UEFA Group Runner-Up" },
+  { joeRank: 62, name: "Slovenia",              code: "si",     rank: 58,  justification: "Two-Time World Cup Participant; UEFA Group Runner-Up" },
+  { joeRank: 63, name: "Ireland",               code: "ie",     rank: 59,  justification: "Three-Time World Cup Participant; Finished 3rd in UEFA Qualifying Group" },
+  { joeRank: 64, name: "Burkina Faso",          code: "bf",     rank: 62,  justification: "Africa Cup Runner-Up (2013) and Finished 2nd in CAF Qualifying Group. Plus cool name!" },
+  { joeRank: 65, name: "Albania",               code: "al",     rank: 64,  justification: "Euro 2016 & 2024 Participant; UEFA Qualification Contender" },
+  { joeRank: 66, name: "North Macedonia",       code: "mk",     rank: 67,  justification: "Eliminated Italy from 2022 Qualifying; Finished 2nd in UEFA Qualifying Group" },
+  { joeRank: 67, name: "United Arab Emirates",  code: "ae",     rank: 68,  justification: "1990 World Cup Participant; Lost AFC Qualification Playoff" },
+  { joeRank: 68, name: "Northern Ireland",      code: "gb-nir", rank: 70,  justification: "Three-Time World Cup Participant; Finished 3rd in UEFA Qualifying Group" },
+  { joeRank: 69, name: "Jamaica",               code: "jm",     rank: 71,  justification: "1998 World Cup Participant; Eliminated in CONCACAF Final Round. Plus they have a bobsled team!" },
+  { joeRank: 70, name: "Georgia",               code: "ge",     rank: 72,  justification: "Euro 2024 Participant; UEFA Playoff Contender" },
+  { joeRank: 71, name: "Finland",               code: "fi",     rank: 73,  justification: "Euro 2020 Participant; Finished 3rd in UEFA Qualifying Group" },
+  { joeRank: 72, name: "Iceland",               code: "is",     rank: 75,  justification: "2018 World Cup Participant; Finished 3rd in UEFA Qualifying Group" },
+  { joeRank: 73, name: "Bolivia",               code: "bo",     rank: 76,  justification: "Three-Time World Cup Participant; Missed CONMEBOL Qualification" },
+  { joeRank: 74, name: "Montenegro",            code: "me",     rank: 81,  justification: "Never Qualified for a World Cup, but Reached UEFA Qualification Contention" },
+  { joeRank: 75, name: "Gabon",                 code: "ga",     rank: 87,  justification: "Never Qualified for a World Cup, but Finished Behind CAF Group Winner" },
+  { joeRank: 76, name: "Thailand",              code: "th",     rank: 93,  justification: "Never Qualified for a World Cup, but Home of Fantastic Food" },
+  { joeRank: 77, name: "Guatemala",             code: "gt",     rank: 96,  justification: "Never Qualified for a World Cup, but Came Closer Than Ever in 2026 Qualifying. Plus many friends are Tecos!" },
+  { joeRank: 78, name: "Luxembourg",            code: "lu",     rank: 98,  justification: "Never Qualified for a World Cup, but My Ancestral Homeland" },
+  { joeRank: 79, name: "Mozambique",            code: "mz",     rank: 101, justification: "Never Qualified for a World Cup, but Immortalized in Bob Dylan song." },
+  { joeRank: 80, name: "Suriname",              code: "sr",     rank: 125, justification: "Never Qualified for a World Cup, but smallest country to almost qualify for 2026" },
+  { joeRank: 81, name: "San Marino",            code: "sm",     rank: 211, justification: "Lowest FIFA ranked team in the World! Now that's cool!" },
 ];
 
 // ============================================================
@@ -133,10 +133,11 @@ function renderFlags() {
           </div>
         </div>
         <div class="flag-card-back">
-          <div class="flag-back-rank">FIFA #${team.rank}</div>
+          <div class="flag-back-rank">Joe #${team.joeRank}</div>
           <div class="flag-back-name">${team.name}</div>
           <div class="flag-back-divider"></div>
           <div class="flag-back-reason">${team.justification}</div>
+          <div class="flag-back-fifa">FIFA #${team.rank}</div>
         </div>
       </div>
     `;
