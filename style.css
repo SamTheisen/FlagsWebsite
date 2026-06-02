@@ -163,6 +163,16 @@ a {
   margin-bottom: 22px;
 }
 
+.hero-title-top {
+  display: block;
+  white-space: nowrap;
+}
+
+.hero-title-bottom {
+  display: block;
+  margin-top: 0.35em;
+}
+
 .hero-sub {
   font-size: 1rem;
   color: rgba(238, 242, 255, 0.65);
