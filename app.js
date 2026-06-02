@@ -326,7 +326,7 @@ function renderResult() {
 QRCode.toCanvas(document.getElementById("qrCanvas"), window.location.href, {
   width: 120,
   margin: 2,
-  color: { dark: "#eef2ff", light: "#090d18" },
+  color: { dark: "#0a0f1e", light: "#ffffff" },
 });
 
 // ============================================================

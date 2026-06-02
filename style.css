@@ -791,6 +791,8 @@ footer {
 .footer-qr canvas {
   border-radius: 8px;
   display: block;
+  padding: 6px;
+  background: #ffffff;
 }
 
 .footer-qr-label {
