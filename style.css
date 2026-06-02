@@ -83,6 +83,20 @@ a {
   align-items: center;
   justify-content: center;
   z-index: 1;
+  overflow: hidden;
+}
+
+.hero-soccer-ball {
+  position: absolute;
+  width: 80vmin;
+  max-width: 560px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  filter: blur(18px) brightness(0.18);
+  z-index: 0;
+  pointer-events: none;
+  user-select: none;
 }
 
 .hero-bg {

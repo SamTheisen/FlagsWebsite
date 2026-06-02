@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <defs>
+    <clipPath id="ball-clip">
+      <circle cx="200" cy="200" r="190"/>
+    </clipPath>
+  </defs>
+
+  <!-- Ball base -->
+  <circle cx="200" cy="200" r="190" fill="white"/>
+
+  <!-- Center pentagon -->
+  <polygon points="200,148 249.5,183.9 230.6,242.1 169.4,242.1 150.5,183.9" fill="#111" clip-path="url(#ball-clip)"/>
+
+  <!-- Top pentagon -->
+  <polygon points="200,147 249.5,111.1 230.6,52.9 169.4,52.9 150.5,111.1" fill="#111" clip-path="url(#ball-clip)"/>
+
+  <!-- Upper-right pentagon -->
+  <polygon points="250.4,183.6 269.3,125.4 330.5,125.4 349.4,183.6 299.9,219.5" fill="#111" clip-path="url(#ball-clip)"/>
+
+  <!-- Lower-right pentagon -->
+  <polygon points="231.1,242.8 292.3,242.8 311.2,301 261.7,336.9 212.2,301" fill="#111" clip-path="url(#ball-clip)"/>
+
+  <!-- Lower-left pentagon -->
+  <polygon points="168.9,242.8 107.7,242.8 88.8,301 138.3,336.9 187.8,301" fill="#111" clip-path="url(#ball-clip)"/>
+
+  <!-- Upper-left pentagon -->
+  <polygon points="149.6,183.6 130.7,125.4 69.5,125.4 50.6,183.6 100.1,219.5" fill="#111" clip-path="url(#ball-clip)"/>
+
+  <!-- Ball border -->
+  <circle cx="200" cy="200" r="190" fill="none" stroke="#ccc" stroke-width="4"/>
+</svg>
