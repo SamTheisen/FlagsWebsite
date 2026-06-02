@@ -93,7 +93,7 @@ a {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  filter: blur(18px) brightness(0.18);
+  filter: blur(8px) brightness(0.45);
   z-index: 0;
   pointer-events: none;
   user-select: none;
