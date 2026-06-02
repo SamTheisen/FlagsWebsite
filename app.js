@@ -50,10 +50,10 @@ const TEAMS = [
   { joeRank: 73, name: "Bolivia",               code: "bo",     rank: 76,  justification: "Three-Time World Cup Participant; Missed CONMEBOL Qualification" },
   { joeRank: 74, name: "Montenegro",            code: "me",     rank: 81,  justification: "Never Qualified for a World Cup, but Reached UEFA Qualification Contention" },
   { joeRank: 75, name: "Gabon",                 code: "ga",     rank: 87,  justification: "Never Qualified for a World Cup, but Finished Behind CAF Group Winner" },
-  { joeRank: 76, name: "Thailand",              code: "th",     rank: 93,  justification: "Never Qualified for a World Cup, but Home of Fantastic Food" },
+  { joeRank: 76, name: "Thailand",              code: "th",     rank: 93,  justification: "Never Qualified for a World Cup, but Home of Fantastic Spicy Cuisine!"},
   { joeRank: 77, name: "Guatemala",             code: "gt",     rank: 96,  justification: "Never Qualified for a World Cup, but Came Closer Than Ever in 2026 Qualifying. Plus many friends are Tecos!" },
-  { joeRank: 78, name: "Luxembourg",            code: "lu",     rank: 98,  justification: "Never Qualified for a World Cup, but My Ancestral Homeland" },
-  { joeRank: 79, name: "Mozambique",            code: "mz",     rank: 101, justification: "Never Qualified for a World Cup, but Immortalized in Bob Dylan song." },
+  { joeRank: 78, name: "Luxembourg",            code: "lu",     rank: 98,  justification: "Never Qualified for a World Cup, but My Ancestral Homeland!"},
+  { joeRank: 79, name: "Mozambique",            code: "mz",     rank: 101, justification: "Never Qualified for a World Cup, but Immortalized in Bob Dylan song. They have an AK-47 on their flag! wtf!?"},
   { joeRank: 80, name: "Suriname",              code: "sr",     rank: 125, justification: "Never Qualified for a World Cup, but smallest country to almost qualify for 2026" },
   { joeRank: 81, name: "San Marino",            code: "sm",     rank: 211, justification: "Lowest FIFA ranked team in the World! Now that's cool!" },
 ];
