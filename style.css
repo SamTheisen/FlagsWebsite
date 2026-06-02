@@ -805,3 +805,18 @@ footer {
   color: var(--text-muted);
   letter-spacing: 0.02em;
 }
+
+.footer-twitter {
+  margin-top: 8px;
+}
+
+.footer-twitter a {
+  color: var(--text-muted);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  transition: color var(--transition);
+}
+
+.footer-twitter a:hover {
+  color: var(--text);
+}
