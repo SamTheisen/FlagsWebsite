@@ -323,7 +323,7 @@ function renderResult() {
 // QR CODE
 // ============================================================
 
-QRCode.toCanvas(document.getElementById("qrCanvas"), window.location.href, {
+QRCode.toCanvas(document.getElementById("qrCanvas"), "https://flags-website-eight.vercel.app/", {
   width: 120,
   margin: 2,
   color: { dark: "#0a0f1e", light: "#ffffff" },
