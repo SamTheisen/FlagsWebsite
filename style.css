@@ -88,12 +88,12 @@ a {
 
 .hero-soccer-ball {
   position: absolute;
-  width: 80vmin;
-  max-width: 560px;
+  width: 110vmin;
+  max-width: 800px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  filter: blur(8px) brightness(0.45);
+  filter: blur(6px) brightness(0.35);
   z-index: 0;
   pointer-events: none;
   user-select: none;
