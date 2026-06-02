@@ -106,7 +106,8 @@ function flagUrl(code) {
 // INIT — populate text placeholders
 // ============================================================
 
-document.getElementById("heroSub").textContent = CONFIG.description;
+const heroSub = document.getElementById("heroSub");
+if (heroSub) heroSub.textContent = CONFIG.description;
 document.getElementById("footerText").textContent =
   `Flying above ${CONFIG.address} \u00b7 2026 FIFA World Cup`;
 document.getElementById("quizSub").textContent = `See if you can name all ${TEAMS.length}.`;
@@ -317,6 +318,16 @@ function renderResult() {
   `;
   document.getElementById("quizRestartBtn").addEventListener("click", startQuiz);
 }
+
+// ============================================================
+// QR CODE
+// ============================================================
+
+QRCode.toCanvas(document.getElementById("qrCanvas"), window.location.href, {
+  width: 120,
+  margin: 2,
+  color: { dark: "#eef2ff", light: "#090d18" },
+});
 
 // ============================================================
 // UTILITIES

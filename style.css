@@ -779,3 +779,24 @@ footer {
   color: var(--text-muted);
   letter-spacing: 0.02em;
 }
+
+.footer-qr {
+  margin-top: 20px;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-qr canvas {
+  border-radius: 8px;
+  display: block;
+}
+
+.footer-qr-label {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin: 0;
+}
